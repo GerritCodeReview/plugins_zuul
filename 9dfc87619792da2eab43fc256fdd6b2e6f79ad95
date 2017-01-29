@@ -1,0 +1,129 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "80124d99_d1bd972c",
+        "filename": "/COMMIT_MSG",
+        "patchSetId": 2
+      },
+      "lineNbr": 7,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "Jan 29, 2017 8:25:03 AM",
+      "side": 1,
+      "message": "Same comment as in its-buzilla plugin.",
+      "revId": "9dfc87619792da2eab43fc256fdd6b2e6f79ad95",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "fd908f85_b20ac973",
+        "filename": "BUILD",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "Jan 29, 2017 8:25:03 AM",
+      "side": 1,
+      "message": "You added all GWT dependencies, that are not needed, but you missed to include here the actual GWT module definition. Just compare it with the Buck version:\n\n  gwt_module \u003d \u0027com.googlesource.gerrit.plugins.zuul.Zuul\u0027,\n\ngut_module is seamlessly supported in the gerrit_plugin() Bazel rule, see working example in reviewers-plugin: [1].\n\n* [1] https://github.com/davido/gerrit-reviewers-plugin/blob/master/BUILD#L6",
+      "revId": "9dfc87619792da2eab43fc256fdd6b2e6f79ad95",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "74da1aef_183d6d98",
+        "filename": "BUILD",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "Jan 29, 2017 8:25:03 AM",
+      "side": 1,
+      "message": "Remove this, it\u0027s not needed.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 1
+      },
+      "revId": "9dfc87619792da2eab43fc256fdd6b2e6f79ad95",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0d787979_543e407f",
+        "filename": "external_plugin_deps.bzl",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "Jan 29, 2017 8:25:03 AM",
+      "side": 1,
+      "message": "Remove this file entirely. GWT dependencies are provided in Gerrit tree build mode by gerrit_plugin() Bazel rule.",
+      "revId": "9dfc87619792da2eab43fc256fdd6b2e6f79ad95",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "16847209_9beafdd0",
+        "filename": "lib/gwt/BUILD",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "Jan 29, 2017 8:25:03 AM",
+      "side": 1,
+      "message": "Remove this file entirely. GWT dependencies are provided in Gerrit tree build mode by gerrit_plugin() Bazel rule.",
+      "revId": "9dfc87619792da2eab43fc256fdd6b2e6f79ad95",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "789eb0e0_ac59cbd5",
+        "filename": "lib/ow2/BUILD",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "Jan 29, 2017 8:25:03 AM",
+      "side": 1,
+      "message": "Remove this file entirely. GWT dependencies are provided in Gerrit tree build mode by gerrit_plugin() Bazel rule.",
+      "revId": "9dfc87619792da2eab43fc256fdd6b2e6f79ad95",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "0168373a_2df1efab",
+        "filename": "src/main/resources/Documentation/build.md",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1011323
+      },
+      "writtenOn": "Jan 29, 2017 8:25:03 AM",
+      "side": 1,
+      "message": "The same comment as in its-bugzilla plugin.",
+      "revId": "9dfc87619792da2eab43fc256fdd6b2e6f79ad95",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
