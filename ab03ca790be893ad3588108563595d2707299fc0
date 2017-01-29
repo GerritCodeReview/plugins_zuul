@@ -25,6 +25,29 @@
     },
     {
       "key": {
+        "uuid": "131bcbe1_2bedaae3",
+        "filename": "BUILD",
+        "patchSetId": 4
+      },
+      "lineNbr": 5,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "Jan 29, 2017 9:43:01 AM",
+      "side": 1,
+      "message": "Done, thanks.",
+      "range": {
+        "startLine": 4,
+        "startChar": 4,
+        "endLine": 5,
+        "endChar": 23
+      },
+      "revId": "ab03ca790be893ad3588108563595d2707299fc0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "f591d920_f9fdc3a7",
         "filename": "BUILD",
         "patchSetId": 4
@@ -36,6 +59,29 @@
       "writtenOn": "Jan 29, 2017 9:42:01 AM",
       "side": 1,
       "message": "Defined in gerrit_plugin() Bazel rule. Please remove.",
+      "range": {
+        "startLine": 15,
+        "startChar": 8,
+        "endLine": 15,
+        "endChar": 33
+      },
+      "revId": "ab03ca790be893ad3588108563595d2707299fc0",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "e71d3d63_93feba49",
+        "filename": "BUILD",
+        "patchSetId": 4
+      },
+      "lineNbr": 15,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "Jan 29, 2017 9:43:01 AM",
+      "side": 1,
+      "message": "Done, thanks.",
       "range": {
         "startLine": 15,
         "startChar": 8,
