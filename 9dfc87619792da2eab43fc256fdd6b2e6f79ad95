@@ -36,6 +36,23 @@
     },
     {
       "key": {
+        "uuid": "6d04a899_2a791341",
+        "filename": "BUILD",
+        "patchSetId": 2
+      },
+      "lineNbr": 18,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "Jan 29, 2017 9:29:56 AM",
+      "side": 1,
+      "message": "Woops, sorry.\n\nThanks, done.",
+      "revId": "9dfc87619792da2eab43fc256fdd6b2e6f79ad95",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
         "uuid": "74da1aef_183d6d98",
         "filename": "BUILD",
         "patchSetId": 2
@@ -47,6 +64,29 @@
       "writtenOn": "Jan 29, 2017 8:25:03 AM",
       "side": 1,
       "message": "Remove this, it\u0027s not needed.",
+      "range": {
+        "startLine": 20,
+        "startChar": 0,
+        "endLine": 24,
+        "endChar": 1
+      },
+      "revId": "9dfc87619792da2eab43fc256fdd6b2e6f79ad95",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "b5d474ad_66876731",
+        "filename": "BUILD",
+        "patchSetId": 2
+      },
+      "lineNbr": 24,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "Jan 29, 2017 9:29:56 AM",
+      "side": 1,
+      "message": "Thanks, done.",
       "range": {
         "startLine": 20,
         "startChar": 0,
