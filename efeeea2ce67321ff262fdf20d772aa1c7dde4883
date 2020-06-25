@@ -34,6 +34,24 @@
       "revId": "efeeea2ce67321ff262fdf20d772aa1c7dde4883",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "1ca616f1_2f7290b2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1012155
+      },
+      "writtenOn": "2020-06-25T12:41:31Z",
+      "side": 1,
+      "message": "\u003e Isn\u0027t the \"Depends-On\" block redundant?  The same info is shown in the commit message box not too far away.\n\nYes, it is. At least I think so.\n\nThe idea at this point is not to make the plugin perfect (more work needed there :-D) but to re-create what the plugin offered on the GWT UI.\n\nThere, the Depends-On block was also there, although the same information was\nvisible in the commit message box.\n\nHere\u0027s a link to the posted change in WMF current Gerrit with the plugin\u0027s GWT UI:\n\n  https://gerrit.wikimedia.org/r/#/c/mediawiki/extensions/WikibaseMediaInfo/+/604739/\n\nAs you see, the Depends-On part is duplicated there as well.\n\nSo it\u0027s not so much about improving the overall design. It\u0027s merely just\nre-creating what was available in the GWT UI.\n\nIf I find time, I want to upload a change to add an extension point to the\n`related changes` list in stable-3.2. Because the Depends-On / Needed-By\ninformation would actually nicely fit there. And then one might instead of the Change-Id show the change\u0027s subject as the other related changes items in the list do?\nThat would add value over the plain commit message from my point of view.\n\nBut for now, re-creating what the GWT-UI offered is the main focus.\n\n\n\u003e I don\u0027t know what\u0027s going on with this one, but the commit message box has got shunted way to the right and has squashed out the related changes box.\n\u003e \n\u003e https://gerrit-test.wikimedia.org/r/c/mediawiki/extensions/WikibaseMediaInfo/+/604739\n\nFor me, the commit-message box moves a tiny bit to the right, as the Change-Ids are longer than what is otherwise shown in the Change Meta-data part. Here\u0027s a screenshot from Firefox:\n\n  https://i.imgur.com/37ZaINf.png\n\nAnd when I make the window smaller, the related changes move under\nthe commit message box:\n\n  https://i.imgur.com/3NQJrwS.png\n\nLooks all ok for me. I checked on an Android phone, and it\u0027s ok there too.\n\n\nBy `squashed out`, do you mean the related changes box moved to under the commit message box, or that the related changes box is no longer visible?\nCould you paste a screenshot of what you\u0027re seeing?",
+      "parentUuid": "66803948_b453349e",
+      "revId": "efeeea2ce67321ff262fdf20d772aa1c7dde4883",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
     }
   ]
 }
