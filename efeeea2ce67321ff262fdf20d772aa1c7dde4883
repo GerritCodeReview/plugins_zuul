@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "bf5466b2_77aef130",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1012155
+      },
+      "writtenOn": "2020-06-25T10:36:51Z",
+      "side": 1,
+      "message": "Here\u0027s a sample of what 1 Depends-On and 1 Needed-By looks like\n\n   https://gerrit-test.wikimedia.org/r/q/Ie2a97f03b33ab9780f084ff34972e35636a76277\n\nAnd here\u0027s a sample of 6 Depends-On\n\n  https://gerrit-test.wikimedia.org/r/q/I684b2f82b89f779808cc655942464dfdddf85453",
+      "revId": "efeeea2ce67321ff262fdf20d772aa1c7dde4883",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
