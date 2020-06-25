@@ -17,11 +17,16 @@
 
 export const htmlTemplate = Polymer.html`
     <style include="gr-change-metadata-shared-styles">
-    /* Workaround for empty style block - see https://github.com/Polymer/tools/issues/408 */
+      .zuul-dependency-cycle {
+        background: #d17171;
+      }
+      .zuul-dependency-cycle > .value {
+        padding-right: 1em;
+      }
     </style>
     <template is="dom-if" if="[[_crd_loaded]]">
       <template is="dom-if" if="[[_crd.depends_on.length]]">
-        <section class="zuul-dependency">
+        <section class$="[[_computeSectionClass(_crd)]]">
           <span class="title">Depends on</span>
           <span class="value">
             <template is="dom-repeat" items="[[_crd.depends_on]]">
@@ -34,7 +39,7 @@ export const htmlTemplate = Polymer.html`
         </section>
       </template>
       <template is="dom-if" if="[[_crd.needed_by.length]]">
-        <section class="zuul-dependency">
+        <section class$="[[_computeSectionClass(_crd)]]">
           <span class="title">Needed by</span>
           <span class="value">
             <template is="dom-repeat" items="[[_crd.needed_by]]">
