@@ -52,6 +52,23 @@
       "revId": "efeeea2ce67321ff262fdf20d772aa1c7dde4883",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "eebe3a25_1e7dc726",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 2
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1012155
+      },
+      "writtenOn": "2020-06-25T13:12:37Z",
+      "side": 1,
+      "message": "Paladox provided a screenshot:\n\n  https://imgur.com/a/BFtq1kH\n\nYes, this looks way off.\nMaybe, I\u0027ve got to start hacking on the extension point to the related changes list right away :-)",
+      "revId": "efeeea2ce67321ff262fdf20d772aa1c7dde4883",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
