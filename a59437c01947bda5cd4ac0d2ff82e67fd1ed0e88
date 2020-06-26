@@ -1,0 +1,27 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "8520eb1c_92f81dc6",
+        "filename": "gr-zuul/gr-zuul_html.js",
+        "patchSetId": 4
+      },
+      "lineNbr": 71,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2020-06-26T15:58:42Z",
+      "side": 1,
+      "message": "Couldn\u0027t you just put _crd in here rather than calling this._crd in the function?",
+      "range": {
+        "startLine": 71,
+        "startChar": 50,
+        "endLine": 71,
+        "endChar": 51
+      },
+      "revId": "a59437c01947bda5cd4ac0d2ff82e67fd1ed0e88",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": true
+    }
+  ]
+}
