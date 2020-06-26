@@ -39,6 +39,30 @@
       "revId": "9a21963c340b91b12fdd06f5524806b599fd869c",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "d13b2a6e_6c30f4b5",
+        "filename": "gr-zuul/gr-zuul_html.js",
+        "patchSetId": 3
+      },
+      "lineNbr": 19,
+      "author": {
+        "id": 1012155
+      },
+      "writtenOn": "2020-06-26T15:12:34Z",
+      "side": 1,
+      "message": "No, we don\u0027t need this. This is a relict from where the cross-repo dependencies\nwere still shown at the left in the change-metadata extension.\n\nBut we du need the \"shared styles\" to color the links correctly and have the\npadding of the h4 reduced.\n\nDone in PS4.",
+      "parentUuid": "e77a1f69_b767d756",
+      "range": {
+        "startLine": 19,
+        "startChar": 4,
+        "endLine": 19,
+        "endChar": 54
+      },
+      "revId": "9a21963c340b91b12fdd06f5524806b599fd869c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
