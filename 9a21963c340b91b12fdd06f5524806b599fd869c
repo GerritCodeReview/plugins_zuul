@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "key": {
+        "uuid": "d08d6e30_b7bed601",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1012155
+      },
+      "writtenOn": "2020-06-26T11:00:29Z",
+      "side": 1,
+      "message": "I\u0027ve updated gerrit-test.wikimedia.org with these changes, so the above links\nnow show the basic PolyGerrit UI using the (not yet merged upstream) related\nchanges extension point.",
+      "revId": "9a21963c340b91b12fdd06f5524806b599fd869c",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
+    }
+  ]
+}
