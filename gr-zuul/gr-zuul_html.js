@@ -51,6 +51,14 @@ export const htmlTemplate = Polymer.html`
         flex-shrink: 0;
         width: 1.2em;
       }
+      a.zuulDependencyCycle {
+        background: #d17171;
+        padding: 0em 0.3em;
+        border-radius: 1em;
+      }
+      a.zuulDependencyCycle:after {
+        content: '⟲';
+      }
     </style>
     <template is="dom-if" if="[[_crd_loaded]]">
       <template is="dom-if" if="[[_crd.depends_on.length]]">
@@ -60,6 +68,7 @@ export const htmlTemplate = Polymer.html`
             <div class="changeContainer zuulDependencyContainer">
               <a
                 href$="[[_computeDependencyUrl(item)]]"
+                class$="[[_computeDependencyClass(_crd)]]"
                 title$="[[item]]"
               >
                 [[item]]
@@ -75,6 +84,7 @@ export const htmlTemplate = Polymer.html`
             <div class="changeContainer zuulDependencyContainer">
               <a
                 href$="[[_computeDependencyUrl(item)]]"
+                class$="[[_computeDependencyClass(_crd)]]"
                 title$="[[item]]"
               >
                 [[item]]
