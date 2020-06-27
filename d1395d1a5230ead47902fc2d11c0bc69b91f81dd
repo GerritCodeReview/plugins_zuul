@@ -39,6 +39,30 @@
       "revId": "d1395d1a5230ead47902fc2d11c0bc69b91f81dd",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "8d0e9e45_585f5236",
+        "filename": "gr-zuul/gr-zuul_html.js",
+        "patchSetId": 5
+      },
+      "lineNbr": 60,
+      "author": {
+        "id": 1012155
+      },
+      "writtenOn": "2020-06-27T09:02:44Z",
+      "side": 1,
+      "message": "\u003e could this be confused with meaning \"refresh\" somehow?\n\nI guess you\u0027re right. I tried too hard to make it like the submittable \"check mark\" glyph.\n\nPS6 now has a plain standard link and a note to the side saying \"dependency cycle detected\". This should match the additions of other related changes (Merged, Abandoned, Not Current, ...) best.\n\n(gerrit-test.wikimedia.org got updated with PS6, if you want to see it live)",
+      "parentUuid": "560c7fc9_b3980ccb",
+      "range": {
+        "startLine": 60,
+        "startChar": 18,
+        "endLine": 60,
+        "endChar": 19
+      },
+      "revId": "d1395d1a5230ead47902fc2d11c0bc69b91f81dd",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
