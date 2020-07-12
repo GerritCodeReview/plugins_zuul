@@ -16,6 +16,24 @@
       "revId": "baf1af8d961d5e1a439e5db1e4c324e5292b36a5",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": true
+    },
+    {
+      "key": {
+        "uuid": "fa44b464_6b8e9e07",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/zuul/util/DependsOnExtractor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1012155
+      },
+      "writtenOn": "2020-07-12T20:32:55Z",
+      "side": 1,
+      "message": "Thanks for pointing this limitation out. Indeed, it should get documented.\nI\u0027ve now added a change towards that. See I85549ae4b262c144a10aae812755e965f20637b8\n\nAlso davido asked for URL based dependencies some days back.\nSo I do think there is demand, and it should be easy to add.\n\nHopefully someone comes around to implement it :-)\n\n(I only have access to Zuul v2, and that won\u0027t change anytime soon)",
+      "parentUuid": "f7e3002f_170fb823",
+      "revId": "baf1af8d961d5e1a439e5db1e4c324e5292b36a5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
