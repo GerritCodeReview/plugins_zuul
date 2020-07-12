@@ -34,6 +34,24 @@
       "revId": "baf1af8d961d5e1a439e5db1e4c324e5292b36a5",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
       "unresolved": false
+    },
+    {
+      "key": {
+        "uuid": "f8fcd992_f8767357",
+        "filename": "src/main/java/com/googlesource/gerrit/plugins/zuul/util/DependsOnExtractor.java",
+        "patchSetId": 1
+      },
+      "lineNbr": 27,
+      "author": {
+        "id": 1041506
+      },
+      "writtenOn": "2020-07-12T22:39:02Z",
+      "side": 1,
+      "message": "Thanks.",
+      "parentUuid": "fa44b464_6b8e9e07",
+      "revId": "baf1af8d961d5e1a439e5db1e4c324e5292b36a5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
+      "unresolved": false
     }
   ]
 }
