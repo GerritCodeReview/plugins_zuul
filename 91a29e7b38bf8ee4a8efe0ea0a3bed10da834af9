@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "b859c1ba_a3bbf692",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1013302
+      },
+      "writtenOn": "2020-11-18T10:58:39Z",
+      "side": 1,
+      "message": "Sorry, I don\u0027t know what the zuul plugin does, neither who maintains it. Removing myself as reviewer.",
+      "revId": "91a29e7b38bf8ee4a8efe0ea0a3bed10da834af9",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
