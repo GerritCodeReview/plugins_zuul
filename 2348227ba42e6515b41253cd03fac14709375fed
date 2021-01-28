@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "71fa5f13_09c5404e",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2021-01-28T22:35:07Z",
+      "side": 1,
+      "message": "The plugin is broken with Gerrit stable-3.3 due to some Bazel rule change: https://gerrit.googlesource.com/plugins/simple-submit-rules/+/077759e1a5d9087c081a8f3a6295dfa038198afe%5E%21/\n\nSo I have just created a stable-3.2 branch for the plugin and it works now :]\n",
+      "revId": "2348227ba42e6515b41253cd03fac14709375fed",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
