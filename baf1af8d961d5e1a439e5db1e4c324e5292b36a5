@@ -1,6 +1,24 @@
 {
   "comments": [
     {
+      "unresolved": false,
+      "key": {
+        "uuid": "6573fff7_e2079dc2",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2021-01-28T23:38:23Z",
+      "side": 1,
+      "message": "Thanks Vitaliy Lotorev.\n\nThe plugin only supporting legacy changeid for dependencies is now documented in a child change: https://gerrit-review.googlesource.com/c/plugins/zuul/+/275055/1/src/main/resources/Documentation/about.md\n\nI got CI configured for this repositories and moved all changes to stable-3.2 (something unrelated is broken in stable-3.3 or master, that will be for later). I am merging all those changes since we got them on Wikimedia for a while and they work as intended :)",
+      "revId": "baf1af8d961d5e1a439e5db1e4c324e5292b36a5",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": true,
       "key": {
         "uuid": "f7e3002f_170fb823",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/zuul/util/DependsOnExtractor.java",
@@ -14,10 +32,10 @@
       "side": 1,
       "message": "Hi, I don\u0027t quite understand why this regex is used as Zuul v3 documentation explicitly recommends using \"Depends-On: URL\" format,\nand declares \u0027I...\u0027 format deprecated, see [1]. Does this plugin only support Zuul v2? It\u0027s not stated anywhere in plugin docs.\n\nIf you feel there is a better place for this discussion (e.g mailing list), lets move discussin there.\n\n[1] https://zuul-ci.org/docs/zuul/discussion/gating.html#cross-project-dependencies",
       "revId": "baf1af8d961d5e1a439e5db1e4c324e5292b36a5",
-      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
-      "unresolved": true
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "fa44b464_6b8e9e07",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/zuul/util/DependsOnExtractor.java",
@@ -32,10 +50,10 @@
       "message": "Thanks for pointing this limitation out. Indeed, it should get documented.\nI\u0027ve now added a change towards that. See I85549ae4b262c144a10aae812755e965f20637b8\n\nAlso davido asked for URL based dependencies some days back.\nSo I do think there is demand, and it should be easy to add.\n\nHopefully someone comes around to implement it :-)\n\n(I only have access to Zuul v2, and that won\u0027t change anytime soon)",
       "parentUuid": "f7e3002f_170fb823",
       "revId": "baf1af8d961d5e1a439e5db1e4c324e5292b36a5",
-      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
-      "unresolved": false
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     },
     {
+      "unresolved": false,
       "key": {
         "uuid": "f8fcd992_f8767357",
         "filename": "src/main/java/com/googlesource/gerrit/plugins/zuul/util/DependsOnExtractor.java",
@@ -50,8 +68,7 @@
       "message": "Thanks.",
       "parentUuid": "fa44b464_6b8e9e07",
       "revId": "baf1af8d961d5e1a439e5db1e4c324e5292b36a5",
-      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153",
-      "unresolved": false
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
