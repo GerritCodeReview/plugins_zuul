@@ -3,7 +3,7 @@
     "zuul-check:plugins_zuul": {
       "state": "NOT_STARTED",
       "created": "2020-12-17T17:30:57Z",
-      "updated": "2021-01-28T23:39:25Z"
+      "updated": "2021-01-28T23:39:50Z"
     }
   }
 }
