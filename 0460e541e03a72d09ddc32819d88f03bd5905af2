@@ -16,6 +16,23 @@
       "message": "This plugin uses PolyGerrit and breaks on master branch. I have merely copy pasted a change Tao made on another plugin https://gerrit-review.googlesource.com/c/plugins/code-owners/+/276562\n\nIf all goes well the CI job should pass, which means the plugin compiles with Gerrit@master and I guess that will be sufficient to get this merged :]",
       "revId": "0460e541e03a72d09ddc32819d88f03bd5905af2",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "01221db8_67cc7bad",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2021-01-29T13:27:54Z",
+      "side": 1,
+      "message": "Thank you.  Then I guess I am going to do all the merge dance to bring in latest changes from stable-3.2 into master :]",
+      "revId": "0460e541e03a72d09ddc32819d88f03bd5905af2",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ]
 }
