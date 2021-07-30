@@ -11,7 +11,7 @@
 // WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 // See the License for the specific language governing permissions and
 // limitations under the License.
-package com.googlesource.gerrit.plugins.zuul;
+package com.googlesource.gerrit.plugins.zuul.util;
 
 import static com.google.common.truth.Truth.assertThat;
 import static com.google.gerrit.testing.GerritJUnit.assertThrows;
@@ -21,9 +21,13 @@ import static org.mockito.Mockito.mock;
 import static org.mockito.Mockito.when;
 
 import com.google.gerrit.entities.Project;
+import com.google.gerrit.extensions.common.ChangeInfo;
+import com.google.gerrit.extensions.common.CommitInfo;
+import com.google.gerrit.extensions.common.RevisionInfo;
 import com.google.gerrit.server.git.GitRepositoryManager;
 import java.io.IOException;
 import java.math.BigInteger;
+import java.util.HashMap;
 import java.util.HashSet;
 import java.util.Set;
 import org.eclipse.jgit.errors.MissingObjectException;
@@ -84,6 +88,34 @@ public class CommitMessageFetcherTest {
     assertThat(commitMessage).isEqualTo("CommitMsg\n");
   }
 
+  @Test
+  public void testFetchChangeInfoSingleRevision() {
+    ChangeInfo changeInfo = new ChangeInfo();
+    changeInfo.currentRevision = "foo";
+    changeInfo.revisions = new HashMap<>();
+    changeInfo.revisions.put("foo", createRevisionInfo("CommitMsg"));
+
+    CommitMessageFetcher fetcher = createCommitMessageFetcher();
+    String commitMessage = fetcher.fetch(changeInfo);
+
+    assertThat(commitMessage).isEqualTo("CommitMsg");
+  }
+
+  @Test
+  public void testFetchChangeInfoMultipleRevisions() {
+    ChangeInfo changeInfo = new ChangeInfo();
+    changeInfo.currentRevision = "bar";
+    changeInfo.revisions = new HashMap<>();
+    changeInfo.revisions.put("foo", createRevisionInfo("CommitMsgFoo"));
+    changeInfo.revisions.put("bar", createRevisionInfo("CommitMsgBar"));
+    changeInfo.revisions.put("baz", createRevisionInfo("CommitMsgBaz"));
+
+    CommitMessageFetcher fetcher = createCommitMessageFetcher();
+    String commitMessage = fetcher.fetch(changeInfo);
+
+    assertThat(commitMessage).isEqualTo("CommitMsgBar");
+  }
+
   @Before
   public void setUp() throws Exception {
     ObjectLoader objectLoaderBlob = mock(ObjectLoader.class);
@@ -115,6 +147,16 @@ public class CommitMessageFetcherTest {
 
     repoManager = mock(GitRepositoryManager.class);
     when(repoManager.openRepository(eq(Project.nameKey("ProjectFoo")))).thenReturn(repo);
+  }
+
+  private RevisionInfo createRevisionInfo(String commitMessage) {
+    CommitInfo commitInfo = new CommitInfo();
+    commitInfo.message = commitMessage;
+
+    RevisionInfo revisionInfo = new RevisionInfo();
+    revisionInfo.commit = commitInfo;
+
+    return revisionInfo;
   }
 
   private CommitMessageFetcher createCommitMessageFetcher() {

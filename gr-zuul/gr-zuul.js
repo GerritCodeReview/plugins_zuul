@@ -53,8 +53,46 @@ class GrZuul extends Polymer.Element {
     return this.plugin.restApi().send('GET', url).then(crd => {
       this._crd = crd;
       this._crd_loaded = true;
-      this.setHidden(!(crd.depends_on.length || crd.needed_by.length));
+      this.setHidden(!(this._isDependsOnSectionVisible()
+                       || crd.needed_by.length));
     });
+  }
+
+  // copied from gr-related-changes-list.js, which is inaccessible from here.
+  // Resolved uses of `this.ChangeStatus.[...]`, as that's inaccessible from here too.
+  // Removed _isIndirectAncestor check, as the needed data is inaccessible from here.
+  // Not all code paths are reachable, as we only have shallow ChangeInfo objects. We leave the
+  // code here nonetheless, to allow for easier updating from gr-related-changes-list.js.
+  _computeChangeStatusClass(change) {
+    const classes = ['status'];
+    if (change._revision_number != change._current_revision_number) {
+      classes.push('notCurrent');
+    } else if (change.submittable) {
+      classes.push('submittable');
+    } else if (change.status == 'NEW') {
+      classes.push('hidden');
+    }
+    return classes.join(' ');
+  }
+
+  // copied from gr-related-changes-list.js, which is inaccessible from here.
+  // Resolved uses of `this.ChangeStatus.[...]`, as that's inaccessible from here too.
+  // Removed _isIndirectAncestor check, as the needed data is inaccessible from here.
+  // Not all code paths are reachable, as we only have shallow ChangeInfo objects. We leave the
+  // code here nonetheless, to allow for easier updating from gr-related-changes-list.js.
+  _computeChangeStatus(change) {
+    switch (change.status) {
+      case 'MERGED':
+        return 'Merged';
+      case 'ABANDONED':
+        return 'Abandoned';
+    }
+    if (change._revision_number != change._current_revision_number) {
+      return 'Not current';
+    } else if (change.submittable) {
+      return 'Submittable';
+    }
+    return '';
   }
 
   setHidden(hidden) {
@@ -68,8 +106,13 @@ class GrZuul extends Polymer.Element {
     }
   }
 
-  _computeDependencyUrl(changeId) {
-    return Gerrit.Nav.getUrlForSearchQuery(changeId);
+  _computeDependencyUrl(changeInfo) {
+    return Gerrit.Nav.getUrlForSearchQuery(changeInfo.change_id);
+  }
+
+  _isDependsOnSectionVisible() {
+    return !!(this._crd.depends_on_found.length
+              + this._crd.depends_on_missing.length);
   }
 }
 

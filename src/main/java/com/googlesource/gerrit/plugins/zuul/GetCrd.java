@@ -14,82 +14,59 @@
 
 package com.googlesource.gerrit.plugins.zuul;
 
-import com.google.common.flogger.FluentLogger;
-import com.google.gerrit.entities.Change;
-import com.google.gerrit.entities.Project;
 import com.google.gerrit.extensions.common.ChangeInfo;
 import com.google.gerrit.extensions.restapi.AuthException;
 import com.google.gerrit.extensions.restapi.BadRequestException;
 import com.google.gerrit.extensions.restapi.Response;
 import com.google.gerrit.extensions.restapi.RestReadView;
-import com.google.gerrit.extensions.restapi.TopLevelResource;
 import com.google.gerrit.server.change.RevisionResource;
 import com.google.gerrit.server.permissions.PermissionBackendException;
-import com.google.gerrit.server.restapi.change.ChangesCollection;
-import com.google.gerrit.server.restapi.change.QueryChanges;
 import com.google.inject.Inject;
 import com.google.inject.Singleton;
+import com.googlesource.gerrit.plugins.zuul.util.DependsOnFetcher;
+import com.googlesource.gerrit.plugins.zuul.util.NeededByFetcher;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+import org.apache.commons.lang3.tuple.Pair;
 import org.eclipse.jgit.errors.RepositoryNotFoundException;
 
 @Singleton
 public class GetCrd implements RestReadView<RevisionResource> {
-  private static final FluentLogger logger = FluentLogger.forEnclosingClass();
-
-  private final ChangesCollection changes;
-  private final CommitMessageFetcher commitMessageFetcher;
+  private final DependsOnFetcher dependsOnFetcher;
+  private final NeededByFetcher neededByFetcher;
 
   @Inject
-  GetCrd(ChangesCollection changes, CommitMessageFetcher commitMessageFetcher) {
-    this.changes = changes;
-    this.commitMessageFetcher = commitMessageFetcher;
+  GetCrd(DependsOnFetcher dependsOnFetcher, NeededByFetcher neededByFetcher) {
+    this.dependsOnFetcher = dependsOnFetcher;
+    this.neededByFetcher = neededByFetcher;
   }
 
   @Override
-  @SuppressWarnings("unchecked")
   public Response<CrdInfo> apply(RevisionResource rsrc)
       throws RepositoryNotFoundException, IOException, BadRequestException, AuthException,
           PermissionBackendException {
     CrdInfo out = new CrdInfo();
-    out.dependsOn = new ArrayList<>();
-    out.neededBy = new ArrayList<>();
+    Pair<List<ChangeInfo>, List<String>> dependsOn = dependsOnFetcher.fetchForRevision(rsrc);
+    out.dependsOnFound = dependsOn.getLeft();
+    out.dependsOnMissing = dependsOn.getRight();
 
-    Change.Key thisId = rsrc.getChange().getKey();
+    out.neededBy = neededByFetcher.fetchForChangeKey(rsrc.getChange().getKey());
 
-    // get depends on info
-    Project.NameKey p = rsrc.getChange().getProject();
-    String rev = rsrc.getPatchSet().commitId().getName();
-    String commitMsg = commitMessageFetcher.fetch(p, rev);
-    Pattern pattern = Pattern.compile("[Dd]epends-[Oo]n:? (I[0-9a-f]{8,40})", Pattern.DOTALL);
-    Matcher matcher = pattern.matcher(commitMsg);
-    while (matcher.find()) {
-      String otherId = matcher.group(1);
-      logger.atFinest().log("Change %s depends on change %s", thisId, otherId);
-      out.dependsOn.add(otherId);
-    }
+    List<String> dependsOnAllKeys = new ArrayList<>(out.dependsOnMissing);
+    dependsOnAllKeys.addAll(
+        out.dependsOnFound.stream()
+            .map(changeInfo -> changeInfo.changeId)
+            .collect(Collectors.toList()));
 
-    // get needed by info
-    QueryChanges query = changes.list();
-    String neededByQuery = "message:" + thisId + " -change:" + thisId;
-    query.addQuery(neededByQuery);
-    Response<List<?>> response = query.apply(TopLevelResource.INSTANCE);
-    List<ChangeInfo> changes = (List<ChangeInfo>) response.value();
-    // check for dependency cycles
-    for (ChangeInfo other : changes) {
-      String otherId = other.changeId;
-      logger.atFinest().log("Change %s needed by %s", thisId, otherId);
-      if (out.dependsOn.contains(otherId)) {
-        logger.atFiner().log(
-            "Detected dependency cycle between changes %s and %s", thisId, otherId);
+    out.cycle = false;
+    for (ChangeInfo changeInfo : out.neededBy) {
+      if (dependsOnAllKeys.contains(changeInfo.changeId)) {
         out.cycle = true;
+        break;
       }
-      out.neededBy.add(otherId);
     }
-
     return Response.ok(out);
   }
 }
