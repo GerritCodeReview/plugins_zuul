@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "de4b642c_200fd0c5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2022-01-23T13:39:08Z",
+      "side": 1,
+      "message": "The CI build fails with Gerrit master which now requires Java 11 and no more has \"error_prone_warnings_toolchain\".  The CI job uses Java 8.\n\n* https://bugs.chromium.org/p/gerrit/issues/detail?id\u003d15495\n* https://gerrit-review.googlesource.com/c/gerrit/+/327478\n\n",
+      "revId": "16a217cda6a817c6c23e16f5728851915c790880",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
