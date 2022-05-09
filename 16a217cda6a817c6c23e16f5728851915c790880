@@ -67,6 +67,23 @@
       "message": "Paladox that is a set of changes for Wikimedia which we used to have on our Gerrit 3.2 and 3.3. If you could CR+2 this one that should get it merged via Zuul :) thx!",
       "revId": "16a217cda6a817c6c23e16f5728851915c790880",
       "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    },
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "3a9fe265_8e60fa0f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2022-05-09T09:05:16Z",
+      "side": 1,
+      "message": "I have updated the plugin on the Wikimedia Gerrit 3.4.4 and can confirm the plugin works as expected ( was https://phabricator.wikimedia.org/T307621 ).",
+      "revId": "16a217cda6a817c6c23e16f5728851915c790880",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
     }
   ],
   "submitRequirementResults": [
