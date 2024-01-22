@@ -14,9 +14,11 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+
+import '@gerritcodereview/typescript-api/gerrit';
 import './gr-zuul.js';
 
-Gerrit.install(plugin => {
+window.Gerrit.install(plugin => {
   plugin.registerCustomComponent(
       'related-changes-section', 'gr-zuul', {slot: 'bottom'});
 });
