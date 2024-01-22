@@ -107,7 +107,7 @@ class GrZuul extends Polymer.Element {
   }
 
   _computeDependencyUrl(changeInfo) {
-    return Gerrit.Nav.getUrlForSearchQuery(changeInfo.change_id);
+    return `${window.CANONICAL_PATH || ''}/q/${changeInfo.change_id}`;
   }
 
   _isDependsOnSectionVisible() {
