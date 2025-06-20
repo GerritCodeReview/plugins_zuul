@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "4e82e21a_3b3799f5",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 3
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2025-06-20T13:12:05Z",
+      "side": 1,
+      "message": "I\u0027ve verified that it builds and i had to generate fake data and the plugin seems to work.\n\nhttps://imgur.com/a/lFyE75G",
+      "revId": "850424c68b3ca1426d0b1baa6d9382b81fdd4658",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
