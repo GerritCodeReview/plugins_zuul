@@ -16,7 +16,7 @@
  */
 
 import {ChangeInfo, NumericChangeId} from '@gerritcodereview/typescript-api/rest-api';
-import {LitElement, html, css, nothing} from 'lit';
+import {LitElement, html, css, CSSResult, nothing} from 'lit';
 import {customElement, property, state} from 'lit/decorators.js';
 import {sharedStyles} from './shared-styles';
 
@@ -53,9 +53,10 @@ export class GrZuul extends LitElement {
   static override get styles() {
     return [
       sharedStyles,
+      window.Gerrit.styles.font as CSSResult,
       css`
         section.related-changes-section {
-          margin-bottom: 1.4em;
+          margin-bottom: var(--spacing-l);
           display: block;
         }
         a {
@@ -66,25 +67,30 @@ export class GrZuul extends LitElement {
           white-space: nowrap;
         }
         .changeContainer {
+          /** gr-related-changes-list.relatedChangeLine */
+          background-color: var(--background-color-primary);
           display: flex;
+          width: 100%;
+          visibility:visible;
+          height: auto;
+          padding-bottom: 2px;
+          padding-top: 2px;
+          border-left: 1px solid var(--border-color);
+          border-right: 1px solid var(--border-color);
+          border-top: 1px solid var(--border-color);
+          padding-right: var(--spacing-m);
+
+          /** adjustements */
           max-width: 100%;
           overflow: hidden;
           text-overflow: ellipsis;
           white-space: nowrap;
+          /** marker space */
+          padding-left: 20px;
         }
-        .changeContainer.thisChange:before {
-          content: '➔';
-          width: 1.2em;
-        }
-        h4,
+        h3,
         section div {
           display: flex;
-        }
-        h4:before,
-        section div:before {
-          content: ' ';
-          flex-shrink: 0;
-          width: 1.2em;
         }
         .status {
           color: var(--deemphasized-text-color);
@@ -98,6 +104,12 @@ export class GrZuul extends LitElement {
         .hidden {
           display: none;
         }
+        .title {
+          color: var(--deemphasized-text-color);
+          display: flex;
+          align-self: flex-end;
+        }
+        // From gr-related-collapse
       `,
     ];
   }
@@ -109,7 +121,7 @@ export class GrZuul extends LitElement {
       ${this._isDependsOnSectionVisible()
         ? html`
             <section class="related-changes-section">
-              <h4>Depends on</h4>
+              <h3 class="title heading-3">Depends on</h3>
               ${this._crd.depends_on_found?.map(
                 item => html`
                   <div class="changeContainer zuulDependencyContainer">
@@ -149,7 +161,7 @@ export class GrZuul extends LitElement {
       ${this._crd.needed_by?.length
         ? html`
             <section class="related-changes-section">
-              <h4>Needed by</h4>
+              <h3 class="title heading-3">Needed by</h3>
               ${this._crd.needed_by.map(
                 item => html`
                   <div class="changeContainer zuulDependencyContainer">
