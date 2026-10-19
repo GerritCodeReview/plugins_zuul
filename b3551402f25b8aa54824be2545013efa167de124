@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": true,
+      "key": {
+        "uuid": "0fc65992_317f2a4f",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 1
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1010788
+      },
+      "writtenOn": "2026-10-19T13:53:29Z",
+      "side": 1,
+      "message": "I have followed up on your change to further improve the styling. I have posted the screenshot before/after on a task I have filed for this purpose: https://phabricator.wikimedia.org/T441684",
+      "revId": "b3551402f25b8aa54824be2545013efa167de124",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
