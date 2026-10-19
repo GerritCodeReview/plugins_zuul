@@ -1,0 +1,21 @@
+{
+  "comments": [
+    {
+      "unresolved": false,
+      "key": {
+        "uuid": "f3458e85_c4f6658d",
+        "filename": "/PATCHSET_LEVEL",
+        "patchSetId": 4
+      },
+      "lineNbr": 0,
+      "author": {
+        "id": 1029953
+      },
+      "writtenOn": "2026-10-19T12:18:13Z",
+      "side": 1,
+      "message": "This is until https://gerrit-review.googlesource.com/c/gerrit/+/645086 is merged and backported and a gerrit release is done.",
+      "revId": "d42eabac78fef7054c00a621fd609debd4b28562",
+      "serverId": "173816e5-2b9a-37c3-8a2e-48639d4f1153"
+    }
+  ]
+}
