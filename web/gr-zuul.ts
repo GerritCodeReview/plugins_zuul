@@ -18,6 +18,7 @@
 import {ChangeInfo, NumericChangeId} from '@gerritcodereview/typescript-api/rest-api';
 import {LitElement, html, css, nothing} from 'lit';
 import {customElement, property, state} from 'lit/decorators.js';
+import {sharedStyles} from './shared-styles';
 
 declare global {
   interface HTMLElementTagNameMap {
@@ -51,6 +52,7 @@ export class GrZuul extends LitElement {
 
   static override get styles() {
     return [
+      sharedStyles,
       css`
         section.related-changes-section {
           margin-bottom: 1.4em;
